@@ -4,7 +4,7 @@ import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BOARD)
 
-receiverNum = '+254725737432'
+receiverNum = '+254xxxxxxxx'
 sim800l = serial.Serial(
 port='/dev/serial0',
 baudrate = 9600,
@@ -24,7 +24,7 @@ sim800l.write(b'AT+CMGF=1\r')
 print(sim800l.read(24))
 time.sleep(1)
 #cmd1 = b'AT+CMGS=\' '+str(receiverNum)+'\'\r'
-sim800l.write(b'AT+CMGS="+254725737432"\r')
+sim800l.write(b'AT+CMGS="+254xxxxxxxxx"\r')
 print(sim800l.read(24))
 
 time.sleep(1)

@@ -39,6 +39,10 @@ def send_data(url, data):
     time.sleep(0.2)
     print(port.read(24))
     
+    port.write(b"AT+HTTPPARA=\"URL\",\""+ bytes(url, "utf-8") + b"\""); #Server address
+    time.sleep(0.2)
+    print(port.read(24))git
+
     port.write(b"AT+HTTPPARA=\"CONTENT\",\"application/json\"")
     time.sleep(0.2)
     print(port.read(24))
@@ -65,4 +69,5 @@ def send_data(url, data):
     print(port.read(24))
     
 #encoding = "utf-8"
-send_data("GET https://api.thingspeak.com/update?api_key=5BN7WKZ260HOJMM6&field1=", str(50))
+#GET removed from the url below to test how it works
+send_data("https://api.thingspeak.com/update?api_key=5BN7WKZ260HOJMM6&field1=", str(50))

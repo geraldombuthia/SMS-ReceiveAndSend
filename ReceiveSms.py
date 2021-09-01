@@ -36,3 +36,4 @@ port.write(b'AT+CMGL="ALL"\r')
 rcv = port.read(300)
 print(rcv)
 time.sleep(1)
+#reads last sms in the storage of the gsm module
