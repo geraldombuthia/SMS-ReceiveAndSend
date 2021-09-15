@@ -19,7 +19,7 @@ def send_data(url, data):
     time.sleep(0.2)
     print(port.read(24))
     
-    port.write(b"AT+SAPBR=3,1,\"APN\",\"internet\"")  # APN
+    port.write(b"AT+SAPBR=3,1,\"APN\",\"network\"")  # APN
     time.sleep(0.2)
     print(port.read(24))
     
@@ -41,7 +41,7 @@ def send_data(url, data):
     
     port.write(b"AT+HTTPPARA=\"URL\",\""+ bytes(url, "utf-8") + b"\""); #Server address
     time.sleep(0.2)
-    print(port.read(24))git
+    print(port.read(24))
 
     port.write(b"AT+HTTPPARA=\"CONTENT\",\"application/json\"")
     time.sleep(0.2)
